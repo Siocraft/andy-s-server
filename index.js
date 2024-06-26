@@ -1,6 +1,8 @@
 const express = require('express');
 const admin = require('firebase-admin');
-const serviceAccount = require("./restaurant-siocraft-firebase-adminsdk-qhc1j-14c23fe95f.json");
+require('dotenv').config();
+
+const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
